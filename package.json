@@ -1,0 +1,21 @@
+{
+  "name": "cexoso_react_ui",
+  "version": "1.0.0",
+  "description": "写ui控件去",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.1.6",
+    "webpack": "^2.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "react ui"
+  ],
+  "author": "cexoso",
+  "license": "ISC"
+}
