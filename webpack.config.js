@@ -2,8 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
-    /* 输入文件 */
-    entry: './src/main.ts',
+    entry: './src/main.tsx',
     output: {
         path: path.resolve(__dirname, './dist'),
         filename: 'build.js'
@@ -17,5 +16,12 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin()]
+    resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+    },    
+    devtool: 'source-map',
+    plugins: [
+        new HtmlWebpackPlugin(),
+        new webpack.LoaderOptionsPlugin({debug: true})
+    ]
 }

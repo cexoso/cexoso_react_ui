@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "description": "写ui控件去",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
   "devDependencies": {
     "html-webpack-plugin": "^2.28.0",
     "ts-loader": "^2.0.0",
