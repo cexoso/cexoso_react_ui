@@ -8,16 +8,27 @@
     "react-dom": "^15.4.2"
   },
   "devDependencies": {
+    "@types/jasmine": "^2.5.43",
+    "@types/react-dom": "^0.14.23",
     "html-webpack-plugin": "^2.28.0",
+    "jasmine": "^2.5.3",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.4.1",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-jasmine": "^1.1.0",
+    "karma-phantomjs-launcher": "^1.0.2",
+    "karma-typescript-preprocessor": "^0.3.1",
+    "karma-webpack": "^2.0.2",
+    "react-addons-test-utils": "^15.4.2",
     "ts-loader": "^2.0.0",
     "typescript": "^2.1.6",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./node_modules/webpack/bin/webpack.js",
-    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
+    "test": "karma start"
   },
   "keywords": [
     "react",
