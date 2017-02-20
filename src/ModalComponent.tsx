@@ -38,6 +38,6 @@ export default class ModalComponent extends Component<any,any>{
         </div>
     }
 }
-export function mkModalComponent() {
-    return <ModalComponent ref={(ref)=>{}}/>;
+export function mkModalComponent(refCallBack) {
+    return <ModalComponent ref={refCallBack}/>;
 }

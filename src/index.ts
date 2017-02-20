@@ -3,17 +3,15 @@ import {Component} from "react";
 class ModalService {
     private placeHolder: JSX.Element
     public a = 1
+    private placeHolderRef
     constructor() {
-        this.placeHolder = mkModalComponent();
+        this.placeHolder = mkModalComponent((ref)=>this.placeHolderRef = ref);
     }
     getPlaceHolder() {
         return this.placeHolder;
     }
     show({content}) {
-        console.log("======================")
-        console.log(this.placeHolder)
-        
-        console.log("======================")
+        this.placeHolderRef.addNewModal(content)
     }
 }
 
