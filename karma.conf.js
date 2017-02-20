@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Sun Feb 19 2017 20:17:25 GMT+0800 (中国标准时间)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -10,11 +10,10 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'requirejs'],
-
-
+    frameworks: ['jasmine'],
     // list of files / patterns to load in the browser
     files: [
+      "test/index.js"
     ],
 
 
@@ -26,13 +25,14 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
+      "test/index.js": ["webpack"]
     },
 
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-    reporters: ['progress'],
+    reporters: ['dots'],
 
 
     // web server port
@@ -51,7 +51,26 @@ module.exports = function(config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
+    webpack: {
+      module: {
+        loaders: [{
+          test: /\.ts$|\.tsx$/,
+          loader: 'ts-loader',
+          exclude: /node_modules/
+        }, {
+          test: /\.js$/,
+          loader: "babel-loader",
+          exclude: /node_modules/
+        }]
+      },
+      resolve: {
+        extensions: [".ts", ".tsx", ".js", ".jsx"]
+      }
+    },
 
+    webpackServer: {
+      noInfo: true
+    },
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['Chrome'],
