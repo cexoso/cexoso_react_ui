@@ -21,18 +21,18 @@ export default class ModalComponent extends Component<any,any>{
         const {modalInstances} = this.state;
         modalInstances.push(modalInstance);
         this.forceUpdate();
-        return modalInstance
+        return modalInstance;
     }
     removeModal(modalInstance) {
         const {modalInstances} = this.state;
         const eqModalInstance = curry(eq)(modalInstance)
         const res = filter(modalInstances,eqModalInstance)
-        this.setState({modalInstances: res});        
-    }
+        this.setState({modalInstances: res});
+    }    
     render() {
         const {modalInstances} = this.state
         return <div>
-            {map(modalInstances,(ins,index)=><div style={mkStyle(index)}>
+            {map(modalInstances,(ins,index)=><div key={index} style={mkStyle(index)}>
                 {ins}
             </div>)}
         </div>
