@@ -25,7 +25,6 @@ export default class ModalComponent extends Component<any,any>{
     }
     removeModal(modalInstance) {
         const {modalInstances} = this.state;
-        console.log(modalInstances.length)
         const eqModalInstance = negate(curry(eq)(modalInstance))
         const res = filter(modalInstances,eqModalInstance)
         this.setState({modalInstances: res});        

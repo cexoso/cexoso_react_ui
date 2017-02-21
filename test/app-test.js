@@ -26,7 +26,7 @@ describe('modalService', function () {
     expect(modalService.getModals().length).toEqual(0);
   });
   it("modalService are Independency", function () {
-    /*const modalService = new ModalService();
+    const modalService = new ModalService();
     const modalService1 = new ModalService();
     TestUtils.renderIntoDocument(<div>
       {modalService.getPlaceHolder()}
@@ -37,6 +37,6 @@ describe('modalService', function () {
     expect(modalService1.getModals().length).toEqual(0);
     modalService.remove(handle1)
     expect(modalService.getModals().length).toEqual(0);
-    expect(modalService1.getModals().length).toEqual(0);*/
+    expect(modalService1.getModals().length).toEqual(0);
   })
 });

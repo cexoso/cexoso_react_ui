@@ -21,7 +21,7 @@ module.exports = {
     },    
     devtool: 'source-map',
     plugins: [
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({template: "./index.html"}),
         new webpack.LoaderOptionsPlugin({debug: true})
     ]
 }
