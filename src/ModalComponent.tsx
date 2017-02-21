@@ -1,6 +1,6 @@
 import * as React from "react";
 import {Component} from "react";
-import {map,filter,curry,eq} from "lodash"
+import {map,filter,curry,eq,negate} from "lodash"
 interface state {
     modalInstances: Array<JSX.Element>
 }
@@ -25,9 +25,10 @@ export default class ModalComponent extends Component<any,any>{
     }
     removeModal(modalInstance) {
         const {modalInstances} = this.state;
-        const eqModalInstance = curry(eq)(modalInstance)
+        console.log(modalInstances.length)
+        const eqModalInstance = negate(curry(eq)(modalInstance))
         const res = filter(modalInstances,eqModalInstance)
-        this.setState({modalInstances: res});
+        this.setState({modalInstances: res});        
     }    
     render() {
         const {modalInstances} = this.state
