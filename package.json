@@ -31,7 +31,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "scripts": {
-    "build": "node ./node_modules/webpack/bin/webpack.js",
+    "build": "node ./node_modules/webpack/bin/webpack.js -m",
     "dev": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "karma start"
   },
